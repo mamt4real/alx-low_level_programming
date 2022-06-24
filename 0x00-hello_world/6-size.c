@@ -1,6 +1,10 @@
 #include <stdio.h>
 
-int main(int argc, char *argv[])
+/**
+ * main - this is the main function
+ * Description: This function prints a text
+ * Return: 0 to indicate success                   */
+int main(void)
 {
 	long long int x;
 	printf("Size of a char: %d byte(s)\n",sizeof(char));
@@ -9,6 +13,6 @@ int main(int argc, char *argv[])
 	printf("Size of a long long int: %d byte(s)\n",sizeof(x));
 	printf("Size of a float: %d byte(s)\n",sizeof(float));
 	
-	return 0;
+	return (0);
 }
 
