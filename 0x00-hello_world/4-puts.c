@@ -1,5 +1,7 @@
 #include <stdio.h>
-/*                                                * Description:  A column of asterisks on the left side,                                              * with beginning and ending almost-blank lines.                                                     */
+ /**
+ * main - this is the main function
+ */
 int main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
