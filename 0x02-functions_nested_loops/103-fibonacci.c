@@ -9,46 +9,17 @@
 
 int main(void)
 {
-	long a = 1, b = 2, sum, next;
+	int a = 1, b = 2, sum, next;
 
-	for (; ;)
+	while (b < 4000000)
 	{
-		if (a % 2 == 0)
-			sum += a;
-		if (b > 4000000)
-			break;
 		if (b % 2 == 0)
 			sum += b;
 		next = a + b;
 		a = b;
 		b = next;
 	}
-	printf("%lu\n", sum);
+	printf("%d\n", sum);
 
 	return (0);
-}
-
-/**
- * printNum - prints an integer character wise
- * @n: the number to print
- */
-
-void printNum(int n)
-{
-	if (n < 0)
-	{
-		_putchar('-');
-		printNum(-n);
-		return;
-	}
-	if (n < 10)
-	{
-		_putchar(n + '0');
-		return;
-	}
-	else
-	{
-		printNum(n / 10);
-		_putchar((n % 10) + '0');
-	}
 }
