@@ -1,4 +1,5 @@
 #include "main.h"
+#include<stdio.h>
 
 /**
  * main - prints the sum of even fubbonaci
@@ -22,7 +23,7 @@ int main(void)
 		a = b;
 		b = next;
 	}
-	printNum(sum);
+	printf("%lu", sum);
 	_putchar('\n');
 
 	return (0);

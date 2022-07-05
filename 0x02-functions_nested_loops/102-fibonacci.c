@@ -1,4 +1,5 @@
 #include "main.h"
+#include<stdio.h>
 
 /**
  * main - prints the first fifty fibbonaci numbers
@@ -7,13 +8,12 @@
 
 int main(void)
 {
-	int a = 0, b = 1;
-	long sum, i;
+	long int a = 0, b = 1, sum, i;
 
 	for (i = 1; i <= 50; i++)
 	{
 		sum = a + b;
-		printNum(sum);
+		printf("%lu", sum);
 		a = b;
 		b = sum;
 
@@ -26,29 +26,4 @@ int main(void)
 	_putchar('\n');
 
 	return (0);
-}
-
-/**
- * printNum - prints an integer character wise
- * @n: the number to print
- */
-
-void printNum(int n)
-{
-	if (n < 0)
-	{
-		_putchar('-');
-		printNum(-n);
-		return;
-	}
-	if (n < 10)
-	{
-		_putchar(n + '0');
-		return;
-	}
-	else
-	{
-		printNum(n / 10);
-		_putchar((n % 10) + '0');
-	}
 }
