@@ -5,11 +5,12 @@
 * 10 times each set per line
 */
 
-void print_alphabet(void)
+void print_alphabet_x10(void)
 {
 	char c;
+	int i;
 
-	for (int i = 0; i < 10; i++)
+	for (i = 0; i < 10; i++)
 	{
 		for (c = 'a'; c <= 'z'; c++)
 			_putchar(c);
