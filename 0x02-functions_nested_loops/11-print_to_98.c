@@ -27,6 +27,12 @@ void print_to_98(int n)
 
 void printNum(int n)
 {
+	if (n < 0)
+	{
+		_putchar('-');
+		printNum(-n);
+		return;
+	}
 	if (n < 10)
 	{
 		_putchar(n + '0');
