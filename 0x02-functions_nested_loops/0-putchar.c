@@ -1,5 +1,3 @@
-#include "_putchar.c"
-
 /**
 * main - prints _putchar
 * Return: 0
