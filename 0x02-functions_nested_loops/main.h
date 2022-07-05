@@ -14,5 +14,32 @@ void times_table(void);
 int add(int, int);
 void print_to_98(int n);
 void printNum(int);
+void print_times_table(int);
 
 #endif /* MAIN_H */
+
+
+/**
+ * printNum - prints an integer character wise
+ * @n: the number to print
+ */
+
+void printNum(int n)
+{
+	if (n < 0)
+	{
+		_putchar('-');
+		printNum(-n);
+		return;
+	}
+	if (n < 10)
+	{
+		_putchar(n + '0');
+		return;
+	}
+	else
+	{
+		printNum(n / 10);
+		_putchar((n % 10) + '0');
+	}
+}
