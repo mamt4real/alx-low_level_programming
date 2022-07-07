@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	long long int num = 612852475143;
+	long int num = 612852475143;
 	long int p = 3;
 
 	while (num > 1)
