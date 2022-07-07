@@ -2,17 +2,25 @@
 
 /**
  * print_number - prints an integer character wise
- * @x: the number to print
+ * @n: the number to print
  */
 
-void print_number(int x)
+void print_number(int n)
 {
-	if (x < 0)
+	if (n < 0)
 	{
 		_putchar('-');
-		x = -x;
+		n = -n;
 	}
-	unsigned int n = (unsigned int)x;
+	print_helper((unsigned int)n);
+}
+
+/**
+ * print_helper - prints an unsigned integer
+ * @n: an unsigned integer to print
+ */
+void print_helper(unsigned int n)
+{
 
 	if (n < 10)
 	{
@@ -20,7 +28,7 @@ void print_number(int x)
 	}
 	else
 	{
-		print_number(n / 10);
+		print_helper(n / 10);
 		_putchar((n % 10) + '0');
 	}
 }

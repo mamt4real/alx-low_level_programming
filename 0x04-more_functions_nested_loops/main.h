@@ -12,6 +12,7 @@ void print_diagonal(int n);
 void print_square(int n);
 void print_triangle(int n);
 void print_number(int n);
+void print_helper(unsigned int n);
 void print_most_numbers(void);
 void printNum(int);
 
