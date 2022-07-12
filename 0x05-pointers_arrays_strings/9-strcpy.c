@@ -17,5 +17,5 @@ char *_strcpy(char *dst, char *src)
 		x++;
 	}
 	dst[x] = '\0';
-	return dst;
+	return (dst);
 }
