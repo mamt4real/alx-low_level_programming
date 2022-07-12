@@ -9,7 +9,7 @@ void _puts(char *s)
 {
 	int x = 0;
 
-	while (s[x++] != '\0')
-		_putchar(s[x]);
+	while (s[x] != '\0')
+		_putchar(s[x++]);
 	_putchar('\n');
 }

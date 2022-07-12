@@ -11,6 +11,7 @@ int main(void)
 	cpy = _strcopy(str, "This is an examole");
 	printf("%s\n", str);
 	printf("%s\n", cpy);
+	print_rev(cpy);
 	
 	//str = "012345678";
 	//puts_half(str);

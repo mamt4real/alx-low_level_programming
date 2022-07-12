@@ -12,7 +12,7 @@ void print_rev(char *s)
 	/* get the length os s */
 	while (s[x++] != '\0')
 		continue;
-	x--;
+	x -= 2;
 	/* print in reverse */
 	while (x >= 0)
 		_putchar(s[x--]);
