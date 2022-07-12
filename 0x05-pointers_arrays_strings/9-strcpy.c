@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * _strcopy - copies src to destination
+ * _strcpy - copies src to destination
  * @src: pointer to the source string
  * @dst: pointer to the destination string
  * Return: pointer to destination
  */
 
-char *_strcopy(char *dst, char *src)
+char *_strcpy(char *dst, char *src)
 {
 	int x = 0;
 
