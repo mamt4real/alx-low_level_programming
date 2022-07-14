@@ -12,5 +12,6 @@ char *cap_string(char*);
 int is_delimeter(char);
 void to_upper(char*);
 char *leet(char*);
+char *rot13(char*);
 
 #endif /* MAIN_H */
