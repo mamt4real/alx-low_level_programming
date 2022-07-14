@@ -7,6 +7,7 @@
  * @n2: pointer to second number
  * @r: pointer to store the result
  * @size_r: size of r
+ * Return: pointer to the result
  */
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
