@@ -17,5 +17,7 @@ char *_strncpy(char *dst, char *src, int n)
 		dst[x] = src[x];
 		x++;
 	}
+	while (x < n)
+		dst[x++] = '\0';
 	return (dst);
 }

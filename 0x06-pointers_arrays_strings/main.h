@@ -13,5 +13,7 @@ int is_delimeter(char);
 void to_upper(char*);
 char *leet(char*);
 char *rot13(char*);
+void print_helper(unsigned int n);
+void print_number(int n);
 
 #endif /* MAIN_H */
