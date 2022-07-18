@@ -13,8 +13,6 @@ char *_strstr(char *s, char *sub)
 	int i, j;
 	char *found = NULL;
 
-	if (!(*s && *sub))
-		return (found);
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		found = s[i] == sub[0] ?
@@ -30,5 +28,7 @@ char *_strstr(char *s, char *sub)
 		if (found)
 			break;
 	}
+	if (*sub[0] == '\0')
+		found = &s[i];
 	return (found);
 }
