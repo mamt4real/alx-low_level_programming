@@ -28,7 +28,7 @@ char *_strstr(char *s, char *sub)
 		if (found)
 			break;
 	}
-	if (*sub[0] == '\0')
+	if (sub[0] == '\0')
 		found = &s[i];
 	return (found);
 }
