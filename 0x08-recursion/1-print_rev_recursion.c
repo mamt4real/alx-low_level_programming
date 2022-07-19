@@ -9,7 +9,6 @@ void print_rev_helper(char *s, int n);
 void _print_rev_recursion(char *s)
 {
 	print_rev_helper(s, 0);
-	_putchar('\n');
 }
 
 /**
