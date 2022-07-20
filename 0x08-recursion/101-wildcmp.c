@@ -26,8 +26,6 @@ int wildcmp(char *s1, char *s2)
  */
 int wildcmp_helper(char *s1, char *s2, int i, int j)
 {
-	int k;
-
 	/* Base case (reached end of s2) */
 	if (s2[j] == '\0')
 	{
@@ -54,20 +52,14 @@ int wildcmp_helper(char *s1, char *s2, int i, int j)
 	/* wild character in pattern */
 	if (s2[j] == '*')
 	{
-		/* move to the last wc */
-		while (s2[j + 1] == '*')
-			j++;
+		/* remove repeating wc */
+		if (s2[j + 1] == '*')
+			return (wildcmp_helper(s1, s2, i, j + 1));
 		/* stop wc matching */
 		if (s1[i] == s2[j + 1])
 		{
 			/* find the last index of ch that matches next pt */
-			k = i;
-			while (s1[k] != '\0')
-			{
-				if (s1[k] == s2[j + 1])
-					i = k;
-				k++;
-			}
+			i = (int)(strrchr(s1, s1[i]) - s1);
 			return (wildcmp_helper(s1, s2, i, j + 1));
 		}
 		/* goto next ch in string */
