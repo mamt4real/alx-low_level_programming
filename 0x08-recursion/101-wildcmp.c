@@ -2,7 +2,7 @@
 #include<string.h>
 
 int wildcmp_helper(char *, char *, int, int);
-
+int skip_repeated(char *, int);
 /**
  * wildcmp - compares two strings
  * Description: allows wil character (*)
@@ -39,8 +39,15 @@ int wildcmp_helper(char *s1, char *s2, int i, int j)
 	if (s1[i] == '\0')
 	{
 		/* pattern ends */
-		if (s2[j] == '\0' || (s2[j] == '*' && s2[j + 1] == '\0'))
+		if (s2[j] == '\0')
 			return (1);
+		/* met a wc */
+		if (s2[j] == '*')
+		{
+			j = skip_repeated(s2, j);
+			if (s2[j + 1] == '\0')
+				return (1);
+		}
 		/* pattern remain */
 		return (0);
 	}
@@ -52,18 +59,24 @@ int wildcmp_helper(char *s1, char *s2, int i, int j)
 	/* wild character in pattern */
 	if (s2[j] == '*')
 	{
-		char *l;
-
 		/* remove repeating wc */
-		if (s2[j + 1] == '*')
-			return (wildcmp_helper(s1, s2, i, j + 1));
-		/* find the last index of ch that matches next pt */
-		l = strrchr(s1, s2[j + 1]);
-		if (!l)
-			return (0);
-		i = (int)(l - s1);
-		return (wildcmp_helper(s1, s2, i, j + 1));
+		j = skip_repeated(s2, j);
+		return (wildcmp_helper(s1, s2, i, j + 1) ||
+				wildcmp_helper(s1, s2, i + 1, j));
 	}
 	/* ch doesnt match */
 	return (0);
+}
+
+/**
+ * skip_repeated - clears repeated chars
+ * @p: pattern
+ * @i: current index
+ * Return: the last index of repeated char
+ */
+int skip_repeated(char *p, int i)
+{
+	if (p[i] == p[i + 1])
+		return (skip_repeated(p, i + 1));
+	return (i);
 }
