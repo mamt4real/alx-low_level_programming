@@ -52,18 +52,17 @@ int wildcmp_helper(char *s1, char *s2, int i, int j)
 	/* wild character in pattern */
 	if (s2[j] == '*')
 	{
+		char *l;
+
 		/* remove repeating wc */
 		if (s2[j + 1] == '*')
 			return (wildcmp_helper(s1, s2, i, j + 1));
-		/* stop wc matching */
-		if (s1[i] == s2[j + 1])
-		{
-			/* find the last index of ch that matches next pt */
-			i = (int)(strrchr(s1, s1[i]) - s1);
-			return (wildcmp_helper(s1, s2, i, j + 1));
-		}
-		/* goto next ch in string */
-		return (wildcmp_helper(s1, s2, i + 1, j));
+		/* find the last index of ch that matches next pt */
+		l = strrchr(s1, s2[j + 1]);
+		if (!l)
+			return (0);
+		i = (int)(l - s1);
+		return (wildcmp_helper(s1, s2, i, j + 1));
 	}
 	/* ch doesnt match */
 	return (0);
