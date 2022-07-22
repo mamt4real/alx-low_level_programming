@@ -18,6 +18,8 @@ int main(int argc, char **argv)
 		return (1);
 	}
 	cents = atoi(argv[1]);
+	if (cents < 0)
+		cents = 0;
 	while (i < 5 && cents)
 	{
 		count += cents / coins[i];
