@@ -6,7 +6,7 @@
  * @argv: arguments array
  * Return: 0 always
  */
-int main(int argc, char **argv)
+int main(int argc __attribute__((unused)), char **argv)
 {
 	/* print the programme name */
 	printf("%s\n", argv[0]);

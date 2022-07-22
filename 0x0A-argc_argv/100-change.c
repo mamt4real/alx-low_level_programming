@@ -9,9 +9,9 @@
  */
 int main(int argc, char **argv)
 {
-	int count = 0, i = 0, cents;
 	int coins[] = {25, 10, 5, 2, 1};
-	
+	int cents, count = 0, i = 0;
+
 	if (argc != 2)
 	{
 		printf("Error\n");

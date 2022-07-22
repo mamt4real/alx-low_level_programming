@@ -6,7 +6,7 @@
  * @argv: arguments array
  * Return: 0 always
  */
-int main(int argc, char **argv)
+int main(int argc)
 {
 	/* print the number of arguments */
 	printf("%d\n", argc - 1);

@@ -9,7 +9,6 @@
 int main(int argc, char **argv)
 {
 	int i = 0;
-	
 	/* print all arguments */
 	while (i < argc)
 		printf("%s\n", argv[i++]);

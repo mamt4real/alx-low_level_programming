@@ -12,7 +12,6 @@ int isnumber(char *);
 int main(int argc, char **argv)
 {
 	int sum = 0, i = 1;
-	
 	/* sum all the args */
 	while (i < argc)
 	{
