@@ -38,7 +38,7 @@ char **strtow(char *str)
 
 		/* jump the word */
 		i += j;
-		if (*str[i])
+		if (!str[i])
 			break;
 	}
 	if (!size)
