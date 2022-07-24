@@ -11,11 +11,18 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	int i = 0, n1 = strlen(s1),
-	   n2 = strlen(s2);
+	int n1, n2, i = 0;
 	char *arr;
 
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+	n1 = strlen(s1);
+	n2 = strlen(s2);
 	arr = malloc((n1 + n2 + 1) * sizeof(char));
+	if (!arr)
+		return (NULL);
 	while (i < n1)
 	{
 		arr[i] = s1[i];

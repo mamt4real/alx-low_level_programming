@@ -10,12 +10,15 @@
  */
 char *_strdup(char *s)
 {
-	int i = 0, size = strlen(s) + 1;
+	int size, i = 0;
 	char *arr;
 
-	if (!s)
+	if (s == NULL)
 		return (NULL);
+	size = strlen(s) + 1;
 	arr = malloc(size * sizeof(char));
+	if (!arr)
+		return (NULL);
 	while (i < size)
 	{
 		arr[i] = s[i];
