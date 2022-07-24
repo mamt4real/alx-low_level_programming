@@ -27,7 +27,7 @@ char **strtow(char *str)
 			j++;
 		/* create pointers */
 		arr = realloc(arr, (size + 1) * sizeof(char *));
-		tmp = malloc((j + 1) * sizeof(char));
+		tmp = malloc(j * sizeof(char));
 		if (!arr || !tmp)
 			return (NULL);
 		/* copy word */
@@ -43,7 +43,7 @@ char **strtow(char *str)
 	}
 	if (!size)
 		return (NULL);
-	arr = realloc(arr, (size + 1) * sizeof(char *));
 	arr[size] = NULL;
+	free(tmp);
 	return (arr);
 }
