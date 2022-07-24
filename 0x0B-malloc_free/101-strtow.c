@@ -34,14 +34,11 @@ char **strtow(char *str)
 		return (NULL);
 	/* create array of strings */
 	arr = malloc(size * sizeof(char *));
-	/* copy strings */
-	for (i = 0; str[i]; i++)
+	for (i = 0, j = 0; str[i]; i++)
 	{
-		/* skip spaces */
 		if (str[i] == ' ')
 			continue;
 		/* copy the word */
-		j = 0;
 		arr[k] = malloc(lens[k] * sizeof(char));
 		while (str[i] != ' ' && str[i])
 			arr[k][j++] = str[i++];
