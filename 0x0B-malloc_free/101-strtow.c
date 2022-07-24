@@ -38,8 +38,11 @@ char **strtow(char *str)
 
 		/* jump the word */
 		i += j;
+		if (*str[i])
+			break;
 	}
-	arr = realloc(arr, (size + 1) * sizeof(char *));
+	if (!size)
+		return (NULL);
 	arr[size] = NULL;
 	return (arr);
 }
