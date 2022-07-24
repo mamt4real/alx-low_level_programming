@@ -23,7 +23,7 @@ int **alloc_grid(int width, int height)
 		if (arr[i] == NULL)
 		{
 			/* free all previously assigned memories */
-			while (i > 0)
+			while (i >= 0)
 				free(arr[i--]);
 			free(arr);
 			return (NULL);
