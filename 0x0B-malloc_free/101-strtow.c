@@ -43,6 +43,7 @@ char **strtow(char *str)
 	}
 	if (!size)
 		return (NULL);
+	arr = realloc(arr, (size + 1) * sizeof(char *));
 	arr[size] = NULL;
 	return (arr);
 }
