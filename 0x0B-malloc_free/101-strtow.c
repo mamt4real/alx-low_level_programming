@@ -32,13 +32,13 @@ char **strtow(char *str)
 	if (!size)
 		return (NULL);
 	/* create array of strings */
-	arr = malloc(size * sizeof(char *));
+	arr = malloc((size + 1) * sizeof(char *));
 	for (i = 0; str[i]; i++)
 	{
 		if (str[i] == ' ')
 			continue;
 		/* copy the word */
-		arr[k] = malloc(lens[k] * sizeof(char));
+		arr[k] = malloc((lens[k] + 1) * sizeof(char));
 		j = 0;
 		while (str[i] != ' ' && str[i])
 			arr[k][j++] = str[i++];
