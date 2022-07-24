@@ -44,6 +44,5 @@ char **strtow(char *str)
 	if (!size)
 		return (NULL);
 	arr[size] = NULL;
-	free(tmp);
 	return (arr);
 }
