@@ -27,6 +27,8 @@ char **strtow(char *str)
 			i++;
 		if (i > j)
 			lens[size++] = i - j;
+		if (!str[i])
+			break;
 	}
 	if (!size)
 		return (NULL);
@@ -44,6 +46,8 @@ char **strtow(char *str)
 		while (str[i] != ' ' && str[i])
 			arr[k][j++] = str[i++];
 		arr[k++][j] = '\0';
+		if (!str[i])
+			break;
 	}
 	arr[size] = NULL;
 	return (arr);
