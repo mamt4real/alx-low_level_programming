@@ -1,7 +1,6 @@
 #include "main.h"
 #include<stdlib.h>
 #include<stddef.h>
-#include<string.h>
 
 /**
  * strtow - split a string
@@ -34,12 +33,13 @@ char **strtow(char *str)
 		return (NULL);
 	/* create array of strings */
 	arr = malloc(size * sizeof(char *));
-	for (i = 0, j = 0; str[i]; i++)
+	for (i = 0; str[i]; i++)
 	{
 		if (str[i] == ' ')
 			continue;
 		/* copy the word */
 		arr[k] = malloc(lens[k] * sizeof(char));
+		j = 0;
 		while (str[i] != ' ' && str[i])
 			arr[k][j++] = str[i++];
 		arr[k++][j] = '\0';
