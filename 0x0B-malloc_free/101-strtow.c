@@ -10,39 +10,41 @@
  */
 char **strtow(char *str)
 {
-	int k, j, i = 0, size = 0;
-	char **arr, *tmp;
+	int k, j = 0, i = 0, size = 0, lens[1200];
+	char **arr;
 
 	if (str == NULL || !(*str))
 		return (NULL);
-	arr = malloc(sizeof(char *));
+	/* calc no of words and lengths */
 	for (i = 0; str[i]; i++)
 	{
 		/* skip spaces */
 		if (str[i] == ' ')
 			continue;
 		/* get the word length */
-		j = 0;
-		while (str[j + i] != ' ' && str[j + i])
-			j++;
-		/* create pointers */
-		arr = realloc(arr, (size + 1) * sizeof(char *));
-		tmp = malloc(j * sizeof(char));
-		if (!arr || !tmp)
-			return (NULL);
-		/* copy word */
-		for (k = 0; k < j; k++)
-			tmp[k] = str[i + k];
-		tmp[k] = '\0';
-		arr[size++] = tmp;
-
-		/* jump the word */
-		i += j;
-		if (!str[i])
-			break;
+		j = i;
+		while (str[i] != ' ' && str[i])
+			i++;
+		if (i > j)
+			lens[size++] = i - j;
 	}
 	if (!size)
 		return (NULL);
+	/* create array of strings */
+	arr = malloc(size * sizeof(char *));
+	/* copy strings */
+	for (i = 0; str[i]; i++)
+	{
+		/* skip spaces */
+		if (str[i] == ' ')
+			continue;
+		/* copy the word */
+		j = 0;
+		arr[k] = malloc(lens[k] * sizeof(char));
+		while (str[i] != ' ' && str[i])
+			arr[k][j++] = str[i++];
+		arr[k++][j] = '\0';
+	}
 	arr[size] = NULL;
 	return (arr);
 }
