@@ -25,6 +25,8 @@ char **strtow(char *str)
 		j = 0;
 		while (str[j + i] != ' ' && str[j + i])
 			j++;
+		if (!j)
+			continue;
 		/* create pointers */
 		arr = realloc(arr, (size + 1) * sizeof(char *));
 		tmp = malloc(j * sizeof(char));
@@ -43,6 +45,7 @@ char **strtow(char *str)
 	}
 	if (!size)
 		return (NULL);
+	arr = realloc(arr, (size + 1) * sizeof(char *));
 	arr[size] = NULL;
 	return (arr);
 }
