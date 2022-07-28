@@ -34,6 +34,12 @@ char *mul2(char *s1, char *s2)
 		return (NULL);
 	l1 = strlen(s1);
 	l2 = strlen(s2);
+	if ((l1 == 1 && s1[0] == '0') || (l2 == 1 && s2[0] == '0'))
+	{
+		res = malloc(2 * sizeof(char));
+		res[0] = '0', res[1] = '\0';
+		return (res);
+	}
 	res = malloc((l1 + l2) * sizeof(*res));
 	if (res == NULL)
 		return (NULL);
@@ -59,11 +65,6 @@ char *mul2(char *s1, char *s2)
 	i = l1 + l2 - 1;
 	while (res[i] == 0 && i >= 0)
 		i--;
-	if (i < 0)
-	{
-		res[1] = '\0';
-		return (res);
-	}
 	ans = malloc(sizeof(*ans) * (i + 2));
 	for (j = 0; i >= 0; j++, i--)
 		ans[j] = res[i] + '0';

@@ -56,7 +56,13 @@ char *mul2(char *s1, char *s2)
 		return (NULL);
 	l1 = strlen(s1);
 	l2 = strlen(s2);
-	res = malloc((l1 + l2) * sizeof(*res));
+	if ((l1 == 1 && s1[0] == '0') || (l2 == 1 && s2[0] == '0'))
+	{
+		res = malloc(2 * sizeof(char));
+		res[0] = '0', res[1] = '\0';
+		return (res);
+	}
+	res = malloc((l1 + l2) * sizeof(char));
 	if (res == NULL)
 		return (NULL);
 	for (i = 0; i < l1 + l2; i++)
@@ -71,8 +77,7 @@ char *mul2(char *s1, char *s2)
 			n2 = s2[j] - '0';
 			sum = (n1 * n2) + res[r1 + r2] + cry - '0';
 			res[r1 + r2] = (sum % 10) + '0';
-			cry = sum / 10;
-			r2++;
+			cry = sum / 10, r2++;
 		}
 		if (cry > 0)
 			res[r1 + r2] += cry;
@@ -81,11 +86,6 @@ char *mul2(char *s1, char *s2)
 	i = l1 + l2 - 1;
 	while (res[i] == '0' && i >= 0)
 		i--;
-	if (i < 0)
-	{
-		res[1] = '\0';
-		return (res);
-	}
 	res[i + 1] = '\0';
 	return (reverse(res, i));
 }
