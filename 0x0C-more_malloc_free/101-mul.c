@@ -3,17 +3,39 @@
 #include "main.h"
 
 /**
+ * reverse - reverses a string
+ * @s: pointer to string
+ * @i: last index
+ * Return: pointer to to s
+ */
+char *reverse(char *s, int i)
+{
+	char ans;
+	int j = 0;
+
+	for (j = 0; j < i; j++, i--)
+	{
+		ans = s[j];
+		s[j] = s[i];
+		s[i] = ans;
+	}
+	return (s);
+}
+
+/**
  * isnumber - checks if a string is a number
  * @s: pointer to string
  * Return: 1 if s is a number 0 otherwise
  */
 int isnumber(char *s)
 {
-	while (*s)
+	int i = 0;
+
+	while (s[i])
 	{
-		if (*s > 58 || *s < 48)
+		if (s[i] > 58 || s[i] < 48)
 			return (0);
-		s++;
+		i++;
 	}
 	return (1);
 }
@@ -28,7 +50,7 @@ char *mul2(char *s1, char *s2)
 {
 	int l1, l2, sum = 0, cry = 0, i,
 	    j, n1, n2, r1 = 0, r2 = 0;
-	char ans, *res;
+	char *res;
 
 	if (!isnumber(s1) || !isnumber(s2))
 		return (NULL);
@@ -62,13 +84,7 @@ char *mul2(char *s1, char *s2)
 	if (i < 0)
 		return ("0");
 	res[i + 1] = '\0';
-	for (j = 0; j < i; j++, i--)
-	{
-		ans = res[j];
-		res[j] = res[i];
-		res[i] = ans;
-	}
-	return (res);
+	return (reverse(res, i));
 }
 
 /**
