@@ -61,8 +61,8 @@ char *mul2(char *s1, char *s2)
 		i--;
 	if (i < 0)
 	{
-		free(res);
-		return ("0");
+		res[1] = '\0';
+		return (res);
 	}
 	ans = malloc(sizeof(*ans) * (i + 2));
 	for (j = 0; i >= 0; j++, i--)
