@@ -10,14 +10,13 @@
  */
 void *_calloc(unsigned int n, unsigned int size)
 {
-	void *ptr = malloc(n * size);
+	void *ptr;
 	unsigned int i = 0;
 
-	if (ptr == NULL)
-	{
+	if (!n || !size)
 		return (NULL);
-	}
-	while (i < n * size)
+	ptr = malloc(n * size);
+	while (i < n * size && ptr)
 		((char *)ptr)[i++] = 0;
 	return (ptr);
 }
