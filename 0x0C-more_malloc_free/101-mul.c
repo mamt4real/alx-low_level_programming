@@ -82,7 +82,10 @@ char *mul2(char *s1, char *s2)
 	while (res[i] == '0' && i >= 0)
 		i--;
 	if (i < 0)
+	{
+		free(res);
 		return ("0");
+	}
 	res[i + 1] = '\0';
 	return (reverse(res, i));
 }

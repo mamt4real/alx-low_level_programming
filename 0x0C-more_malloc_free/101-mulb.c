@@ -60,11 +60,15 @@ char *mul2(char *s1, char *s2)
 	while (res[i] == 0 && i >= 0)
 		i--;
 	if (i < 0)
+	{
+		free(res);
 		return ("0");
+	}
 	ans = malloc(sizeof(*ans) * (i + 2));
 	for (j = 0; i >= 0; j++, i--)
 		ans[j] = res[i] + '0';
 	ans[j] = '\0';
+	free(res);
 	return (ans);
 }
 
@@ -103,5 +107,6 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 	print(res);
+	free(res);
 	return (0);
 }
