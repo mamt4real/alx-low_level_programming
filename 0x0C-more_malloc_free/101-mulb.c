@@ -26,9 +26,9 @@ int isnumber(char *s)
  */
 char *mul2(char *s1, char *s2)
 {
-	int l1, l2, sum = 0, cry = 0, i,
+	int l1, l2, sum = 0, cry = 0, *res, i,
 	    j, n1, n2, r1 = 0, r2 = 0;
-	char *ans, *res;
+	char *ans;
 
 	if (!isnumber(s1) || !isnumber(s2))
 		return (NULL);
@@ -38,7 +38,7 @@ char *mul2(char *s1, char *s2)
 	if (res == NULL)
 		return (NULL);
 	for (i = 0; i < l1 + l2; i++)
-		res[i] = '0';
+		res[i] = 0;
 	for (i = l1 - 1; i >= 0; i--)
 	{
 		n1 = s1[i] - '0';
@@ -47,8 +47,8 @@ char *mul2(char *s1, char *s2)
 		for (j = l2 - 1; j >= 0; j--)
 		{
 			n2 = s2[j] - '0';
-			sum = (n1 * n2) + res[r1 + r2] + cry - '0';
-			res[r1 + r2] = (sum % 10) + '0';
+			sum = (n1 * n2) + res[r1 + r2] + cry;
+			res[r1 + r2] = sum % 10;
 			cry = sum / 10;
 			r2++;
 		}
@@ -57,13 +57,13 @@ char *mul2(char *s1, char *s2)
 		r1++;
 	}
 	i = l1 + l2 - 1;
-	while (res[i] == '0' && i >= 0)
+	while (res[i] == 0 && i >= 0)
 		i--;
 	if (i < 0)
 		return ("0");
 	ans = malloc(sizeof(*ans) * (i + 2));
 	for (j = 0; i >= 0; j++, i--)
-		ans[j] = res[i];
+		ans[j] = res[i] + '0';
 	ans[j] = '\0';
 	return (ans);
 }
