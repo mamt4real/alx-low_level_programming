@@ -122,5 +122,6 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 	print(res);
+	free(res);
 	return (0);
 }
