@@ -30,6 +30,8 @@ int op_sub(int a, int b)
  */
 int op_mul(int a, int b)
 {
+	if (b == 0)
+		return (0);
 	return (a * b);
 }
 

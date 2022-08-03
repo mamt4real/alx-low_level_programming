@@ -8,8 +8,10 @@
  */
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
+	int i = 0;
+
 	if (array == NULL || action == NULL)
 		return;
-	while (size > 0)
-		action(array[--size]);
+	while (i < size)
+		action(array[i++]);
 }
