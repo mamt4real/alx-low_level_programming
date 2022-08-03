@@ -22,16 +22,11 @@ int main(int argc, char **argv)
 	}
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
-	if (b == 0 && *(argv[2]) == '/')
-	{
-		printf("Error\n");
-		return (98);
-	}
 	f = get_op_func(argv[2]);
 	if (f == NULL)
 	{
 		printf("Error\n");
-		return (98);
+		return (99);
 	}
 	printf("%d\n", f(a, b));
 	return (0);
