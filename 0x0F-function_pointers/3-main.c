@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 	}
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
-	if (b == NULL || a == NULL)
+	if (b == 0 && *(argv[2]) == '/')
 	{
 		printf("Error\n");
 		return (98);
