@@ -13,7 +13,7 @@
 int main(int argc, char **argv)
 {
 	int (*f)(int, int);
-	int a, b;
+	int a, b, res;
 
 	if (argc != 4)
 	{
@@ -28,6 +28,7 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		return (99);
 	}
-	printf("%d\n", f(a, b));
+	res = f(a, b);
+	printf("%d\n", res);
 	return (0);
 }
