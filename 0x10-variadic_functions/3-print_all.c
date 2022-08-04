@@ -15,7 +15,6 @@ void print_all(const char * const format, ...)
 {
 	unsigned int i = 0;
 	va_list args;
-	char *s;
 
 	va_start(args, format);
 	while (format[i])
@@ -32,11 +31,7 @@ void print_all(const char * const format, ...)
 				printf("%f", (float)va_arg(args, double));
 				break;
 			case 's':
-				s = (char *)va_arg(args, char *);
-				if (s)
-					printf("%s", s);
-				if (!s)
-					printf("(nil)");
+				print_str((char *)va_arg(args, char *));
 				break;
 			default:
 				break;
@@ -48,4 +43,16 @@ void print_all(const char * const format, ...)
 	printf("\n");
 	va_end(args);
 }
-
+/**
+ * print_str - prints a str
+ * @s: pointer to str
+ */
+void print_str(char *s)
+{
+	if (s)
+	{
+		printf("%s", s);
+		return;
+	}
+	printf("(nil)");
+}
