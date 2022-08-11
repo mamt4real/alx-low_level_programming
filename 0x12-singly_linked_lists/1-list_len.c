@@ -9,11 +9,10 @@ size_t list_len(const list_t *h)
 {
 	int retval = 0;
 
-	while(h)
+	while (h)
 	{
 		h = h->next;
 		retval++;
 	}
-	
 	return (retval);
 }
