@@ -14,3 +14,7 @@ Data Structure used throughout was a singly linked list that store int
 * [8-sum_listint.c](8-sum_listint.c)
 * [9-insert_nodeint.c](9-insert_nodeint.c)
 * [10-delete_nodeint.c](10-delete_nodeint.c)
+* [100-reverse_listint.c](100-reverse_listint.c)
+* [101-print_listint_safe.c](101-print_listint_safe.c)
+* [102-free_listint_safe.c](102-free_listint_safe.c)
+* [103-find_loop.c](103-find_loop.c)
