@@ -3,7 +3,7 @@
 int is_visited2(listint_t *node, listint_t **visited, int count);
 
 /**
- * print_listint_safe - prints a list even with loop
+ * free_listint_safe - prints a list even with loop
  * @head: pointer to head
  *
  * Return: number of nodes

@@ -8,9 +8,9 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *visited[1024];
 	int count = 0;
-	
+	const listint_t *visited[1024];
+
 	while (head)
 	{
 		if (is_visited(head, visited, count))
