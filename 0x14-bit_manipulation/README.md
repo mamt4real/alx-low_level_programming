@@ -18,3 +18,4 @@ Under this Directory Tasks will help explore various uses of the following opera
 * [3-set_bit.c](3-set_bit.c)
 * [4-clear_bit.c](4-clear_bit.c)
 * [5-flip_bits.c](5-flip_bits.c)
+* [100-get_endianness.c](100-get_endianness.c)
