@@ -17,6 +17,8 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	{
 		if (i & tmp)
 			count++;
+		if (count >= MAX_COUNT)
+			return (-1);
 		i = i << 1;
 	}
 	return (count);

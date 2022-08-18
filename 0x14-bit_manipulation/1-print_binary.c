@@ -21,7 +21,7 @@ void print_binary(unsigned long int n)
  */
 void print_b_helper(unsigned long int n, unsigned long int i)
 {
-	if (i > n)
+	if (i > n || i == (1 << MAX_COUNT - 1))
 		return;
 	print_b_helper(n, i << 1);
 	_putchar(n & i ? '1' : '0');

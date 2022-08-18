@@ -8,12 +8,11 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int i = 1, len = 0,
-		      max = sizeof(i) * 8;
+	unsigned long int i = 1, len = 0;
 
 	while (len++ < index)
 	{
-		if (len >= max)
+		if (len >= MAX_COUNT)
 			return (-1);
 		i = i << 1;
 	}

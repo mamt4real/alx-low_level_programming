@@ -13,7 +13,11 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	if (!n)
 		return (-1);
 	while (len++ < index)
+	{
+		if (len >= MAX_COUNT)
+			return (-1);
 		i = i << 1;
+	}
 	if (*n & i)
 		*n ^= i;
 	return (1);
