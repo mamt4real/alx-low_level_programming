@@ -11,7 +11,7 @@ void print_binary(unsigned long int n)
 		_putchar('0');
 		return;
 	}
-	print_b_helper(n, 1);
+	print_b_helper(n, 0);
 }
 
 /**
@@ -21,8 +21,13 @@ void print_binary(unsigned long int n)
  */
 void print_b_helper(unsigned long int n, unsigned long int i)
 {
-	if (i > n || i == (1 << MAX_COUNT - 1))
+	unsigned int res;
+
+	if (i > MAX_COUNT)
 		return;
-	print_b_helper(n, i << 1);
-	_putchar(n & i ? '1' : '0');
+	res = 1 << i;
+	if (res > n)
+		return;
+	print_b_helper(n, i + 1);
+	_putchar(n & res ? '1' : '0');
 }
