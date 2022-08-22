@@ -19,12 +19,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	buff = malloc(letters);
 	if (!buff)
+	{
+		close(fd);
 		return (0);
-	read(fd, buff, letters);
-	retval = write(1, buff, letters);
+	}
+	retval = read(fd, buff, letters);
+	retval = write(1, buff, retval);
 	free(buff);
 	close(fd);
-	if (retval == -1 || retval < ((int)letters))
+	if (retval == -1)
 		return (0);
 	return (retval);
 }

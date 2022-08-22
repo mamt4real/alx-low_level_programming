@@ -23,11 +23,6 @@ int create_file(const char *filename, char *text_content)
 	}
 	while (text_content[i])
 		i++;
-	if (!i)
-	{
-		close(fd);
-		return (1);
-	}
 	retval = write(fd, text_content, i);
 	close(fd);
 	if (retval == -1 || retval != i)
