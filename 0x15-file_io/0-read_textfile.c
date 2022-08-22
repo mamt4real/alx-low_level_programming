@@ -9,7 +9,7 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd, retval;
+	int fd, retval, tmp;
 	char *buff;
 
 	if (!filename)
@@ -23,11 +23,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		close(fd);
 		return (0);
 	}
-	retval = read(fd, buff, letters);
-	retval = write(1, buff, retval);
+	tmp = read(fd, buff, letters);
+	retval = write(1, buff, tmp);
 	free(buff);
 	close(fd);
-	if (retval == -1)
+	if (retval == -1 || retval != tmp)
 		return (0);
 	return (retval);
 }
