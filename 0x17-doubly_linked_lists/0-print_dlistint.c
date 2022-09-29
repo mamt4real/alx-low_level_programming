@@ -1,10 +1,9 @@
 #include "lists.h"
 
 /**
- * print_dlistsint - prints a list
+ * print_dlistint - prints a list
  *
  * @head: list head
- * 
  * Return: length of list
  */
 

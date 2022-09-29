@@ -29,3 +29,4 @@ Feel free to use the content of this repo to develop yourself too.
 * [0x14-bit_manipulation](0x14-bit_manipulation)
 * [0x13-more_singly_linked_lists](0x13-more_singly_linked_lists)
 * [0x15-file_io](0x15-file_io)
+* [0x17-doubly_linked_lists](0x17-doubly_linked_lists)

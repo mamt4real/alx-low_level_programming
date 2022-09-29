@@ -4,7 +4,6 @@
  * add_dnodeint - adds a node at the beginning of a list
  * @head: head of the list
  * @n: data to add
- * 
  * Return: pointer to new node
  */
 
